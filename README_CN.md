@@ -20,7 +20,7 @@ CLI 专用于 `notes.sjtu.edu.cn` 上的 CodiMD 2.4.1，不是通用 CodiMD 客�
 
 ### 从 GitHub Release 安装（推荐）
 
-本项目目前尚未发布到 npm registry。可以直接安装 GitHub Release 提供的 npm 安装包，无需克隆源码：
+安装 GitHub Release 提供的 npm 安装包，无需克隆源码：
 
 ```sh
 npm install -g https://github.com/ClancyChen1/notes-sjtu-sync/releases/download/v0.1.0/notes-sjtu-sync-0.1.0.tgz

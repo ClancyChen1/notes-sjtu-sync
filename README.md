@@ -20,7 +20,7 @@ The CLI targets CodiMD 2.4.1 on `notes.sjtu.edu.cn`. It is not a general CodiMD 
 
 ### Install from GitHub Releases (recommended)
 
-This project has not yet been published to the npm registry. Install the npm package directly from GitHub Releases without cloning the source repository:
+Install the npm package directly from GitHub Releases without cloning the source repository:
 
 ```sh
 npm install -g https://github.com/ClancyChen1/notes-sjtu-sync/releases/download/v0.1.0/notes-sjtu-sync-0.1.0.tgz
