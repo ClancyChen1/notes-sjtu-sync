@@ -1,0 +1,4 @@
+interface:
+  display_name: "SJTU Notes Sync"
+  short_description: "Sync one Markdown note with SJTU Notes"
+  default_prompt: "Use $notes-sjtu-sync to safely inspect and synchronize one Markdown file with SJTU Notes."
