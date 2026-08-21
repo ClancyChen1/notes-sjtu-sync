@@ -8,6 +8,8 @@
 
 它的使用感觉类似 Git：都有本地副本、远端副本、状态、差异以及 push/pull。但它的结构更简单——每次只处理一篇 Markdown，没有仓库初始化、暂存区、commit、分支或历史记录，也不进行自动合并。它只记录完成安全同步所需的最后共同基线和图片映射。本地 Markdown 始终保留适合离线使用的本地图片路径，远端则使用 CodiMD 图片 URL。
 
+项目提供可选的 Agent Skill。安装 CLI 和 Skill 后，支持 Skills 的 Agent（如 Codex）可以根据你的自然语言请求代为检查状态、显示差异，并调用 `upload`、`download`、`push`、`pull` 等命令。Agent 在写入远端或执行任何 `--force` 操作前会先预检变更并征求明确确认。Skill 只提供操作流程，不包含 CLI 程序。
+
 > **目前不支持 Windows。** v0.1 仅在 Linux 和 macOS 上进行测试并提供支持。
 
 CLI 专用于 `notes.sjtu.edu.cn` 上的 CodiMD 2.4.1，不是通用 CodiMD 客户端，也不是版本控制系统。
@@ -44,13 +46,19 @@ npm install -g .
 
 ### 安装 Agent Skill
 
-配套 Agent Skill 需要单独显式安装：
+建议先安装 CLI，并确认命令可以运行：
+
+```sh
+notes-sjtu-sync --version
+```
+
+然后单独安装配套 Agent Skill：
 
 ```sh
 npx skills add ClancyChen1/notes-sjtu-sync --skill notes-sjtu-sync
 ```
 
-安装 CLI 不会修改任何 Agent 的 Skill 目录。
+这条命令会从 GitHub 仓库取得 Skill，不需要提前克隆源码。Skill 可以单独安装，但如果没有 CLI，Agent 只能识别操作流程，无法实际同步笔记。安装 CLI 不会修改任何 Agent 的 Skill 目录。
 
 ## 登录
 

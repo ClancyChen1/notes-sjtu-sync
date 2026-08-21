@@ -8,6 +8,8 @@ Once tracked, `status` identifies local, remote, or two-sided changes, while `di
 
 The workflow resembles Git because it has local and remote copies, status, diffs, push, and pull. Its structure is deliberately simpler: every command handles one Markdown file, with no repository initialization, staging area, commits, branches, history, or automatic merge. It stores only the last common baseline and image mappings needed for safe synchronization. Local Markdown keeps offline-friendly local image paths, while the Remote Note uses CodiMD image URLs.
 
+The project includes an optional agent skill. After installing both the CLI and the skill, a skill-capable agent such as Codex can act on natural-language requests to inspect status, show diffs, and run commands including `upload`, `download`, `push`, and `pull`. Before writing remotely or using any `--force` option, the agent previews the change and asks for explicit confirmation. The skill provides an operating workflow; it does not contain the CLI itself.
+
 > **Windows is not currently supported.** Version 0.1 is tested and supported only on Linux and macOS.
 
 The CLI targets CodiMD 2.4.1 on `notes.sjtu.edu.cn`. It is not a general CodiMD client or a version-control system.
@@ -44,13 +46,19 @@ npm install -g .
 
 ### Install the agent skill
 
-The bundled agent skill is installed separately:
+Install the CLI first and verify that the command is available:
+
+```sh
+notes-sjtu-sync --version
+```
+
+Then install the bundled agent skill separately:
 
 ```sh
 npx skills add ClancyChen1/notes-sjtu-sync --skill notes-sjtu-sync
 ```
 
-Installing the CLI never writes to an agent's skill directories.
+This command retrieves the skill from the GitHub repository; no source checkout is required. The skill can be installed on its own, but without the CLI an agent can only recognize the workflow and cannot synchronize notes. Installing the CLI never writes to an agent's skill directories.
 
 ## Authentication
 
