@@ -18,7 +18,23 @@ The CLI targets CodiMD 2.4.1 on `notes.sjtu.edu.cn`. It is not a general CodiMD 
 - Linux or macOS
 - A system Chrome/Chromium for browser login, or a `connect.sid` value for hidden import
 
-Install from a checkout:
+### Install from GitHub Releases (recommended)
+
+This project has not yet been published to the npm registry. Install the npm package directly from GitHub Releases without cloning the source repository:
+
+```sh
+npm install -g https://github.com/ClancyChen1/notes-sjtu-sync/releases/download/v0.1.0/notes-sjtu-sync-0.1.0.tgz
+```
+
+Alternatively, download `notes-sjtu-sync-0.1.0.tgz` from [GitHub Releases](https://github.com/ClancyChen1/notes-sjtu-sync/releases), then install the local file:
+
+```sh
+npm install -g ./notes-sjtu-sync-0.1.0.tgz
+```
+
+Choose the `notes-sjtu-sync-0.1.0.tgz` release asset. GitHub's automatically generated `Source code` archives are not npm installation packages.
+
+### Install from a checkout
 
 ```sh
 npm install
@@ -26,19 +42,15 @@ npm run check
 npm install -g .
 ```
 
-After an npm release, the global CLI installation is:
+### Install the agent skill
 
-```sh
-npm install -g notes-sjtu-sync
-```
-
-The bundled agent skill is installed separately. For example, after the repository is public:
+The bundled agent skill is installed separately:
 
 ```sh
 npx skills add ClancyChen1/notes-sjtu-sync --skill notes-sjtu-sync
 ```
 
-The npm package never writes to an agent's skill directories during installation.
+Installing the CLI never writes to an agent's skill directories.
 
 ## Authentication
 

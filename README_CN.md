@@ -18,7 +18,23 @@ CLI 专用于 `notes.sjtu.edu.cn` 上的 CodiMD 2.4.1，不是通用 CodiMD 客�
 - Linux 或 macOS
 - 用于浏览器登录的系统 Chrome/Chromium；无桌面环境时可隐藏导入 `connect.sid`
 
-从源码安装：
+### 从 GitHub Release 安装（推荐）
+
+本项目目前尚未发布到 npm registry。可以直接安装 GitHub Release 提供的 npm 安装包，无需克隆源码：
+
+```sh
+npm install -g https://github.com/ClancyChen1/notes-sjtu-sync/releases/download/v0.1.0/notes-sjtu-sync-0.1.0.tgz
+```
+
+也可以从 [GitHub Releases](https://github.com/ClancyChen1/notes-sjtu-sync/releases) 下载 `notes-sjtu-sync-0.1.0.tgz`，然后安装本地文件：
+
+```sh
+npm install -g ./notes-sjtu-sync-0.1.0.tgz
+```
+
+请选择 Release 附件中的 `notes-sjtu-sync-0.1.0.tgz`；GitHub 自动生成的 `Source code` 压缩包不是 npm 安装包。
+
+### 从源码安装
 
 ```sh
 npm install
@@ -26,19 +42,15 @@ npm run check
 npm install -g .
 ```
 
-发布到 npm 后，全局 CLI 安装命令为：
+### 安装 Agent Skill
 
-```sh
-npm install -g notes-sjtu-sync
-```
-
-配套 Agent Skill 需要单独显式安装。例如仓库公开后可执行：
+配套 Agent Skill 需要单独显式安装：
 
 ```sh
 npx skills add ClancyChen1/notes-sjtu-sync --skill notes-sjtu-sync
 ```
 
-npm 安装过程不会修改任何 Agent 的 Skill 目录。
+安装 CLI 不会修改任何 Agent 的 Skill 目录。
 
 ## 登录
 
